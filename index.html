@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+      <title>Birthday Gift Site</title>
+   </head>
+   <body>
+      <div class="form-container">
+         <form id="birthdayForm">
+            <h1 class="form-title">A Little Surprise For You ❤️</h1>
+            <p class="form-sub">Fill these to unlock your gift — made with love.</p>
+            <div class="form-group">
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+               <label for="age">Age:</label>
+               <input type="number" id="age" name="age" required />
+            </div>
+            <div class="form-group">
+               <label for="dob">Date of Birth:</label>
+               <input type="date" id="dob" name="dob" required />
+            </div>
+            <div class="form-group">
+               <label for="picture">Upload Picture:</label>
+               <input type="file" id="picture" name="picture" accept="image/*" required />
+            </div>
+            <button class="buttonSubmit" type="button" onclick="displayBirthday()">Open My Gift</button>
+         </form>
+      </div>
+
+      <div class="header" id="birthdayHeader" style="display: none">
+         <h1 id="birthdayName"></h1>
+         <p id="birthdayMessage" class="birthday-message">To my love — today and always.</p>
+         <img id="birthdayImage" src="" alt="Birthday Image" class="avatar" />
+         <h2 class="age" id="birthdayAge"></h2>
+         <h4 class="date" id="birthdayDate"></h4>
+      </div>
+
+      <!-- gift sections (cards) -->
+      <section class="gifts-grid" style="display: none">
+         <article class="gift-card happy-card">
+            <div class="gift-image happy-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">How happy I am for you �</h3>
+            <p class="gift-text">You light up my life every day.</p>
+         </article>
+
+         <article class="gift-card respect-card">
+            <div class="gift-image respect-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">When you walk in the room 😍</h3>
+            <p class="gift-text">Everyone notices your glow.</p>
+         </article>
+
+         <article class="gift-card genius-card">
+            <div class="gift-image genius-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">One word: Brilliant ✨</h3>
+            <p class="gift-text">Your mind makes me proud.</p>
+         </article>
+
+         <article class="gift-card goat-card">
+            <div class="gift-image goat-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">My Love ❤️</h3>
+            <p class="gift-text">Unmatched, unforgettable — like you.</p>
+         </article>
+
+         <article class="gift-card cheers-card">
+            <div class="gift-image cheers-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">Cheers to you 🥂</h3>
+            <p class="gift-text">For every smile and every memory.</p>
+         </article>
+
+         <article class="gift-card gratitude-card">
+            <div class="gift-image gratitude-gif gift-cover" aria-hidden="true"></div>
+            <h3 class="gift-title">Forever Thankful 🙏</h3>
+            <p class="gift-text">Words cannot express how much you mean to me.</p>
+         </article>
+      </section>
+
+      <!-- footer -->
+      <footer class="footer" style="display: none">
+         <p>Made with <span class="heart-inline">❤️</span> for you.</p>
+         <p class="credit">created by <a href="https://github.com/BanSimplified567/Birthday-Gift" target="_blank">Bubu</a></p>
+      </footer>
+
+      <audio id="birthdayAudio" src="./happybirthday.mp3" preload="auto"></audio>
+
+      <!-- Updated modal structure with image support -->
+      <div id="modal-container" class="modal-container" style="display: none;">
+         <div class="modal">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-content">
+               <h3 id="modal-title">Gift Title</h3>
+               <p id="modal-message">This is a very special message for you.</p>
+               <img id="modal-image" src="" alt="Special Image" style="display: none; max-width: 100%; border-radius: 10px; margin-top: 15px;" />
+            </div>
+         </div>
+      </div>
+
+      <script src="./script.js"></script>
+   </body>
+</html>
